@@ -10,31 +10,35 @@
 </head>
 <body>
     <div class="container" ng-controller="WelcomeController">
-        <h1 class="lead">ANGULAR!</h1>
 
-
-        <!--<div>-->
-            <!--<h1 style="color:{{name}}">The color is now: {{name}}</h1>-->
-            <!--<input ng-model="name" type="text" placeholder="Enter your name">-->
-        <!--</div>-->
-
-
-        <div class="scoreboard">
+        <div class="scoreboard col-sm-6 col-sm-offset-3">
             <h2 class="message">{{message}}</h2>
-            <div class="homescore">
-                HOME:{{homescore}}
+            <div class="homescore col-sm-6 text-center">
+                <div class="team">
+                    HOME
+                </div>
+                <div class="score">
+                    {{homescore}}
+                </div>
             </div>
-            <div class="awayscore">
-                AWAY:{{awayscore}}
+            <div class="awayscore col-sm-6 text-center">
+                <div class="team">
+                    AWAY
+                </div>
+                <div class="score">
+                    {{awayscore}}
+                </div>
+            </div>
+
+            <div class="scoreentry">
+                <label for="homescore">Home Score</label>
+                <input ng-model="newhomescore" name="homescore" type="number" ng-change="updateHomeScore()" ng-model-options='{ debounce: 0 }'>
+                <label for="awayscore">Away Score</label>
+                <input ng-model="newawayscore" name="awayscore" type="number" ng-change="updateAwayScore()" ng-model-options='{ debounce: 0 }'>
+                <!--<button ng-click="updateScore()">Update</button>-->
             </div>
         </div>
-        <div class="scoreentry">
-            <label for="homescore">Home Score</label>
-            <input ng-model="newhomescore" name="homescore" type="number" ng-change="updateHomeScore()" ng-model-options='{ debounce: 700 }'>
-            <label for="awayscore">Away Score</label>
-            <input ng-model="newawayscore" name="awayscore" type="number" ng-change="updateAwayScore()" ng-model-options='{ debounce: 700 }'>
-            <!--<button ng-click="updateScore()">Update</button>-->
-        </div>
+
 
     </div>
 

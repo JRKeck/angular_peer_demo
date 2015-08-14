@@ -1,1 +1,19 @@
 /*! angular_lecture_build 2015-08-14 */
+h2{
+    min-height: 40px;
+    text-align: center;
+}
+.scoreboard .team{
+    font-weight: bold;
+    font-size: 20px;
+}
+.scoreboard .score{
+    font-weight: bold;
+    font-size: 30px;
+    min-height: 60px;
+    padding: 15px;
+}
+
+.scoreentry {
+    margin-top: 20px;
+}
