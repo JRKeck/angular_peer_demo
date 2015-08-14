@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/styles/style.min.css">
+</head>
+<body>
+    <div class="container" ng-controller="WelcomeController">
+        <h1 class="lead">ANGULAR!</h1>
+
+
+        <!--<div>-->
+            <!--<h1 style="color:{{name}}">The color is now: {{name}}</h1>-->
+            <!--<input ng-model="name" type="text" placeholder="Enter your name">-->
+        <!--</div>-->
+
+
+        <div class="scoreboard">
+            <h2 class="message">{{message}}</h2>
+            <div class="homescore">
+                HOME:{{homescore}}
+            </div>
+            <div class="awayscore">
+                AWAY:{{awayscore}}
+            </div>
+        </div>
+        <div class="scoreentry">
+            <label for="homescore">Home Score</label>
+            <input ng-model="newhomescore" name="homescore" type="number" ng-change="updateHomeScore()" ng-model-options='{ debounce: 2000 }'>
+            <label for="awayscore">Away Score</label>
+            <input ng-model="newawayscore" name="awayscore" type="number" ng-change="updateAwayScore()" ng-model-options='{ debounce: 2000 }'>
+            <!--<button ng-click="updateScore()">Update</button>-->
+        </div>
+
+    </div>
+
+    <!--SCRIPTS-->
+    <script type="text/javascript" src="/vendors/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/assets/scripts/app.min.js"></script>
+</body>
+</html>
